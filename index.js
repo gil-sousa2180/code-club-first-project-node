@@ -1,10 +1,13 @@
-const express = require('express')
-const uuid = require('uuid')
-const app = express()
-const port = 3000
-app.use(express.json())
+const express = require('express');
+const uuid = require('uuid');
+const app = express();
+const port = 3001;
+const cors = require('cors');
 
-const users = []
+app.use(express.json());
+app.use(cors());
+
+const users = [];
 
 const checkUserId = (request, response, next) => {
   const { id } = request.params
